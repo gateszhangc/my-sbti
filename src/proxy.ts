@@ -37,7 +37,8 @@ export function proxy(request: NextRequest) {
   if (shouldRedirect) {
     const redirectHost = requestHost === wwwHost ? apexHost : requestHost;
     if (redirectHost && !localHosts.has(redirectHost)) {
-      redirectUrl.host = redirectHost;
+      redirectUrl.hostname = redirectHost;
+      redirectUrl.port = "";
     }
     return NextResponse.redirect(redirectUrl, 308);
   }
