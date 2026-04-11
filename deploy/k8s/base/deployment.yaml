@@ -28,7 +28,7 @@ spec:
         - name: dokploy-fleet-ghcr
       containers:
         - name: web
-          image: ghcr.io/gateszhangc/my-sbti:bootstrap
+          image: registry.144.91.77.245.sslip.io/my-sbti:bootstrap
           imagePullPolicy: IfNotPresent
           env:
             - name: NODE_ENV
