@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 const apexHost = "my-sbti.lol";
 const wwwHost = `www.${apexHost}`;
 const acmeChallengePath = "/.well-known/acme-challenge/";
+const localHosts = new Set(["localhost", "127.0.0.1"]);
 
 export function proxy(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith(acmeChallengePath)) {
@@ -15,13 +16,31 @@ export function proxy(request: NextRequest) {
     request.headers.get("host") ??
     request.nextUrl.host;
   const requestHost = forwardedHost.split(":")[0]?.toLowerCase();
+  const forwardedProto = request.headers
+    .get("x-forwarded-proto")
+    ?.split(",")[0]
+    ?.trim()
+    .toLowerCase();
+  const redirectUrl = request.nextUrl.clone();
+  let shouldRedirect = false;
 
-  if (requestHost !== wwwHost) {
-    return NextResponse.next();
+  if (requestHost === wwwHost) {
+    redirectUrl.hostname = apexHost;
+    shouldRedirect = true;
   }
 
-  const redirectUrl = request.nextUrl.clone();
-  redirectUrl.hostname = apexHost;
+  if (forwardedProto === "http" && requestHost && !localHosts.has(requestHost)) {
+    redirectUrl.protocol = "https";
+    shouldRedirect = true;
+  }
 
-  return NextResponse.redirect(redirectUrl, 308);
+  if (shouldRedirect) {
+    const redirectHost = requestHost === wwwHost ? apexHost : requestHost;
+    if (redirectHost && !localHosts.has(redirectHost)) {
+      redirectUrl.host = redirectHost;
+    }
+    return NextResponse.redirect(redirectUrl, 308);
+  }
+
+  return NextResponse.next();
 }
