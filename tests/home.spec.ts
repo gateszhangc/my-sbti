@@ -24,6 +24,19 @@ test("homepage renders the SBTI editorial landing experience", async ({
     "content",
     /Science Based Targets initiative/i,
   );
+  await expect(
+    page.locator(
+      'script[src*="googletagmanager.com/gtag/js?id=G-VMF2H8ENS8"]',
+    ),
+  ).toHaveCount(1);
+  const googleAnalyticsBootstrap = await page
+    .locator("script#google-analytics")
+    .textContent();
+  expect(googleAnalyticsBootstrap).toContain('gtag("config", "G-VMF2H8ENS8"');
+  const clarityBootstrap = await page
+    .locator("script#microsoft-clarity")
+    .textContent();
+  expect(clarityBootstrap).toContain("w9sjecl4ox");
   const jsonLd = await page
     .locator("script[type='application/ld+json']")
     .first()

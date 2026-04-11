@@ -10,7 +10,13 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  if (request.nextUrl.hostname !== wwwHost) {
+  const forwardedHost =
+    request.headers.get("x-forwarded-host") ??
+    request.headers.get("host") ??
+    request.nextUrl.host;
+  const requestHost = forwardedHost.split(":")[0]?.toLowerCase();
+
+  if (requestHost !== wwwHost) {
     return NextResponse.next();
   }
 

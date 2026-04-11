@@ -13,4 +13,4 @@ configMapGenerator:
     literals:
       - NEXT_PUBLIC_WEB_URL=https://my-sbti.lol
       - NEXT_PUBLIC_CLARITY_PROJECT_ID=w9sjecl4ox
-      - NEXT_PUBLIC_GA_MEASUREMENT_ID=
+      - NEXT_PUBLIC_GA_MEASUREMENT_ID=G-VMF2H8ENS8
