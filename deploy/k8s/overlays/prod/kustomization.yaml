@@ -5,7 +5,7 @@ resources:
   - ingress.yaml
 images:
   - name: registry.144.91.77.245.sslip.io/my-sbti
-    newTag: c001224caea12f8d0229c765df37669faf3d7b9e
+    newTag: edbd143c9827280dbbbac593cef6022493f80d17
 generatorOptions:
   disableNameSuffixHash: true
 configMapGenerator:
