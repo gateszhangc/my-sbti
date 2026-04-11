@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ingress.yaml
+images:
+  - name: ghcr.io/gateszhangc/my-sbti
+    newTag: bootstrap
+generatorOptions:
+  disableNameSuffixHash: true
+configMapGenerator:
+  - name: my-sbti-runtime
+    literals:
+      - NEXT_PUBLIC_WEB_URL=https://my-sbti.lol
+      - NEXT_PUBLIC_CLARITY_PROJECT_ID=w9sjecl4ox
+      - NEXT_PUBLIC_GA_MEASUREMENT_ID=

@@ -1,0 +1,11 @@
+# Measured Radiance
+
+Measured Radiance treats precision as a visual emotion. Space is organized like an annotated field notebook: concentric forms, calibrated alignments, quiet margins, and deliberate interruptions that imply measurement without becoming sterile. The work should feel meticulously crafted, the product of deep expertise, as if every line was adjusted and re-adjusted by someone unwilling to tolerate visual slack. Composition carries meaning before language does.
+
+Color behaves like proof rather than decoration. Dark mineral greens provide structural gravity; parchment neutrals create warmth and human tactility; copper accents appear as moments of judgment and direction. Nothing glows gratuitously. Every tone must look patiently chosen, painstakingly balanced, and grounded enough to suggest that the work could live equally well in a research archive, a museum wall text, or a founder's private dossier.
+
+Scale and rhythm come from recurrence. Rings, markers, crossing axes, and clipped labels should repeat with subtle variation until they start to feel like evidence. This repetition is not mechanical; it is the result of master-level execution and painstaking attention to spacing, proportion, and tension. The viewer should sense that the page has been labored over for countless hours, with each adjustment making the system more legible and more arresting at the same time.
+
+Typography is sparse and purposeful. Display text should feel editorial and almost ceremonial, while the supporting labels read like calibration marks or review annotations. There is no room for paragraphs that merely explain. Text is a visual instrument, integrated into hierarchy, pace, and silence. The final artifact should look meticulously crafted by someone operating at the top of their field, where even restraint feels expensive.
+
+Balance is achieved by pairing restraint with a few decisive gestures. One diagonal cut, one highlighted marker, one compressed label cluster can animate the whole composition if everything else is held with discipline. The result should never feel automated or generic. It must read as museum-grade work: patiently composed, deeply considered, and refined until the craftsmanship is obvious even before the content is understood.
