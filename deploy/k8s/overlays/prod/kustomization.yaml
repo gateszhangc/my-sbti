@@ -5,7 +5,7 @@ resources:
   - ingress.yaml
 images:
   - name: ghcr.io/gateszhangc/my-sbti
-    newTag: bootstrap
+    newTag: 535f96b6bc2f112f4d7790575eb2379c848e78a9
 generatorOptions:
   disableNameSuffixHash: true
 configMapGenerator:
